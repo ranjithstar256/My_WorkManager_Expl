@@ -22,6 +22,14 @@ class MyWorkCls(context: Context, workerParams: WorkerParameters) :
         }
     }
 
+
+
+
+
+
+
+
+
     fun createNotification(title: String, description: String) :Boolean{
 
         var notificationManager =
@@ -34,6 +42,7 @@ class MyWorkCls(context: Context, workerParams: WorkerParameters) :
         }
 
         var inte = Intent(applicationContext,MainActivity::class.java)
+
         var pendin = PendingIntent.getActivity(
             applicationContext,
             0,
@@ -44,11 +53,19 @@ class MyWorkCls(context: Context, workerParams: WorkerParameters) :
             .setContentTitle(title)
             .setContentText(description)
             .setContentIntent(pendin)
-            .setSmallIcon(R.drawable.ic_launcher_background)
+            .setSmallIcon(android.R.drawable.star_big_on)
 
         var p = notificationManager.notify(1, notificationBuilder.build())
 
         return true
+
+        //Notification:
+        // Intent .
+        // pendingIntent.
+        // Notification.builder.
+        // NotificationManager.
+        // Notification Channel
+        // version check
 
     }
 
